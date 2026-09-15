@@ -15,7 +15,7 @@ A Flutter product catalog application using the DummyJSON API.
 ## Unfinished Work
 
 - Pull-to-refresh was attempted but not fully verified in the Chrome environment.
-- Unit tests were not completed due to the assessment time limit.
+- A more comprehensive unit test for API/data logic was not completed due to the assessment time limit.
 
 ## Technology Stack
 
@@ -50,3 +50,30 @@ lib
 │   ├── product_list_screen.dart
 │   └── product_detail_screen.dart
 └── main.dart
+
+## Architecture
+
+The application is separated into three main parts:
+
+- **Models** – Defines the Product data structure.
+- **Services** – Handles API requests and converts API responses into Product objects.
+- **Screens** – Contains the product list and product detail UI.
+
+The `ProductService` keeps API logic separate from the UI, making the application easier to understand and maintain.
+
+## Key Decisions
+
+### Pagination
+
+The product list uses the DummyJSON `limit` and `skip` parameters. More products are loaded when the user scrolls near the bottom of the list.
+
+### Search
+
+The DummyJSON search endpoint is used instead of filtering the complete product list locally. A 500ms debounce is applied so the API is not called for every character typed by the user.
+
+## How to Run
+
+1. Clone this repository.
+2. Open the project in VS Code.
+3. Run `flutter pub get`.
+4. Run `flutter run -d chrome`.
