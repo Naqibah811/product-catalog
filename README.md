@@ -1,17 +1,52 @@
-# product_catalog
+# Product Catalog App
 
-A new Flutter project.
+A Flutter product catalog application using the DummyJSON API.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Display product list with title, thumbnail and price
+- Pagination when scrolling
+- Product detail screen
+- Product description, price, rating and images
+- Loading, error, retry and empty states
+- Product search with debounce
+- Image loading and error handling
 
-A few resources to get you started if this is your first Flutter project:
+## Unfinished Work
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Pull-to-refresh was attempted but not fully verified in the Chrome environment.
+- Unit tests were not completed due to the assessment time limit.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technology Stack
+
+- Flutter
+- Dart
+- DummyJSON REST API
+- HTTP package
+
+## API Endpoints
+
+Product list:
+
+https://dummyjson.com/products?limit=20&skip=0
+
+Product detail:
+
+https://dummyjson.com/products/{id}
+
+Product search:
+
+https://dummyjson.com/products/search?q=phone
+
+## Project Structure
+
+```text
+lib
+├── models
+│   └── product.dart
+├── services
+│   └── product_service.dart
+├── screens
+│   ├── product_list_screen.dart
+│   └── product_detail_screen.dart
+└── main.dart
